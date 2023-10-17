@@ -12,6 +12,7 @@ class secondViewController: UIViewController, UITableViewDataSource, UITableView
     @IBOutlet weak var tableView: UITableView!
     
     var myPlacesArray = ["Denmark", "UAE", "Germany"]
+    var myPlacesCityArray = ["Billund", "Dubai", "Berlin"]
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return myPlacesArray.count
@@ -21,6 +22,7 @@ class secondViewController: UIViewController, UITableViewDataSource, UITableView
     {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
         let text = myPlacesArray[indexPath.row]
+        cell.detailTextLabel?.text = myPlacesCityArray[indexPath.row]
         cell.textLabel?.text = text
         return cell
 
